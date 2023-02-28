@@ -18,30 +18,31 @@ def dataloader(filepath):
     classes = [d for d in os.listdir(filepath) if os.path.isdir(os.path.join(filepath, d))]
     image = [img for img in classes if img.find('frames_cleanpass') > -1]
     disp  = [dsp for dsp in classes if dsp.find('disparity') > -1]
-
-    monkaa_path = filepath + [x for x in image if 'monkaa' in x][0]
-    monkaa_disp = filepath + [x for x in disp if 'monkaa' in x][0]
-
-
-    monkaa_dir  = os.listdir(monkaa_path)
-
-    all_left_img=[]
-    all_right_img=[]
-    all_left_disp = []
-    test_left_img=[]
-    test_right_img=[]
-    test_left_disp = []
+    print(filepath)
+    print(classes)
+#     monkaa_path = filepath + [x for x in image if 'monkaa' in x][0]
+#     monkaa_disp = filepath + [x for x in disp if 'monkaa' in x][0]
 
 
-    for dd in monkaa_dir:
-      for im in os.listdir(monkaa_path+'/'+dd+'/left/'):
-        if is_image_file(monkaa_path+'/'+dd+'/left/'+im):
-          all_left_img.append(monkaa_path+'/'+dd+'/left/'+im)
-        all_left_disp.append(monkaa_disp+'/'+dd+'/left/'+im.split(".")[0]+'.pfm')
+#     monkaa_dir  = os.listdir(monkaa_path)
 
-      for im in os.listdir(monkaa_path+'/'+dd+'/right/'):
-        if is_image_file(monkaa_path+'/'+dd+'/right/'+im):
-          all_right_img.append(monkaa_path+'/'+dd+'/right/'+im)
+#     all_left_img=[]
+#     all_right_img=[]
+#     all_left_disp = []
+#     test_left_img=[]
+#     test_right_img=[]
+#     test_left_disp = []
+
+
+#     for dd in monkaa_dir:
+#       for im in os.listdir(monkaa_path+'/'+dd+'/left/'):
+#         if is_image_file(monkaa_path+'/'+dd+'/left/'+im):
+#           all_left_img.append(monkaa_path+'/'+dd+'/left/'+im)
+#         all_left_disp.append(monkaa_disp+'/'+dd+'/left/'+im.split(".")[0]+'.pfm')
+
+#       for im in os.listdir(monkaa_path+'/'+dd+'/right/'):
+#         if is_image_file(monkaa_path+'/'+dd+'/right/'+im):
+#           all_right_img.append(monkaa_path+'/'+dd+'/right/'+im)
 
     flying_path = filepath + [x for x in image if x == 'frames_cleanpass'][0]
     flying_disp = filepath + [x for x in disp if x == 'frames_disparity'][0]
