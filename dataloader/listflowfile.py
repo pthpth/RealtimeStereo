@@ -20,6 +20,8 @@ def dataloader(filepath):
     disp  = [dsp for dsp in classes if dsp.find('disparity') > -1]
     print(filepath)
     print(classes)
+    print(image)
+    print(disp)
 #     monkaa_path = filepath + [x for x in image if 'monkaa' in x][0]
 #     monkaa_disp = filepath + [x for x in disp if 'monkaa' in x][0]
 
