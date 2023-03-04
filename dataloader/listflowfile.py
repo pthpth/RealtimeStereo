@@ -16,6 +16,7 @@ def is_image_file(filename):
 def dataloader(filepath):
     print(os.listdir(filepath))
     classes = [d for d in os.listdir(filepath) if os.path.isdir(os.path.join(filepath, d))]
+    print([x.find('frames_cleanpass') for x in classes])
     image = [img for img in classes if img.find('frames_cleanpass') > -1]
     disp  = [dsp for dsp in classes if dsp.find('disparity') > -1]
     print(filepath)
